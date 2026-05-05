@@ -7,12 +7,10 @@ export default function App() {
 
   const appStyle = {
     display: 'flex',
-    gap: '1rem',
+    gap: '2rem',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    padding: '0',
-    margin: '0',
     minHeight: '100vh',
     backgroundColor: darkMode ? '#000' : '#fff',
     color: darkMode ? '#fff' : '#000',
@@ -22,7 +20,7 @@ export default function App() {
   const btnStyle = {
     padding: '0.5rem 1rem',
     borderRadius: '6px',
-    border: '1px solid rgba(0,0,0,0.1)',
+    border: '1px solid grey',
     background: darkMode ? '#222' : '#eee',
     color: darkMode ? '#fff' : '#000',
     cursor: 'pointer',
