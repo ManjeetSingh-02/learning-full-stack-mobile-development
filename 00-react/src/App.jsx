@@ -45,7 +45,7 @@ export default function App() {
         desc="This is hello world message"
       />
 
-      <Counter />
+      <Counter darkMode={darkMode} />
     </div>
   );
 }
