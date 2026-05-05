@@ -1,4 +1,5 @@
 import Counter from './components/Counter';
+import GithubProfile from './components/GithubProfile';
 import Heading from './components/Heading';
 import useTheme from './hooks/useTheme';
 
@@ -46,6 +47,8 @@ export default function App() {
       />
 
       <Counter darkMode={darkMode} />
+
+      <GithubProfile darkMode={darkMode} />
     </div>
   );
 }
