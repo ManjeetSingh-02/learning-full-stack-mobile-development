@@ -221,7 +221,7 @@ export default function GithubProfile({ darkMode }) {
                   target="_blank"
                   style={handleStyle}
                 >
-                  github.com/@{profile.login}
+                  @{profile.login}
                 </a>
                 {profile.bio && <p style={bioStyle}>{profile.bio}</p>}
               </div>
