@@ -73,7 +73,7 @@ export default function GithubProfile({ darkMode }) {
     padding: '0.95rem 1.25rem',
     borderRadius: '16px',
     border: 'none',
-    background: `linear-gradient(135deg, ${colors.accent}, ${darkMode ? '#38bdf8' : '#0284c7'})`,
+    background: `linear-gradient(135deg, ${colors.accent}, ${darkMode ? '#00425e' : '#0284c7'})`,
     color: '#fff',
     cursor: 'pointer',
     fontWeight: 700,
