@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import useTheme from '../hooks/useTheme';
 
 export default function Counter({ darkMode }) {
   const [count, setCount] = useState(0);
