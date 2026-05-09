@@ -1,5 +1,5 @@
-import { Text } from 'react-native';
+import ViewWithOtherComponents from './ViewWithOtherComponents';
 
 export default function () {
-  return <Text> Hello world! </Text>;
+  return <ViewWithOtherComponents />;
 }
