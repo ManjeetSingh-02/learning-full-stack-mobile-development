@@ -5,6 +5,7 @@ import KeyboardAvoidView from './KeyboardAvoidView';
 import SafeAndUnsafe from './SafeAndUnsafe';
 import Stylesheet from './Stylesheet';
 import ComposedStylesheet from './ComposedStylesheet';
+import FlattenStylesheet from './FlattenStylesheet';
 
 export default function () {
   return (
@@ -14,6 +15,7 @@ export default function () {
     // <KeyboardAvoidView />
     // <SafeAndUnsafe />
     // <Stylesheet />
-    <ComposedStylesheet />
+    // <ComposedStylesheet />
+    <FlattenStylesheet />
   );
 }
