@@ -6,6 +6,7 @@ import SafeAndUnsafe from './SafeAndUnsafe';
 import Stylesheet from './Stylesheet';
 import ComposedStylesheet from './ComposedStylesheet';
 import FlattenStylesheet from './FlattenStylesheet';
+import Dimension from './Dimension';
 
 export default function () {
   return (
@@ -16,6 +17,7 @@ export default function () {
     // <SafeAndUnsafe />
     // <Stylesheet />
     // <ComposedStylesheet />
-    <FlattenStylesheet />
+    // <FlattenStylesheet />
+    <Dimension />
   );
 }
