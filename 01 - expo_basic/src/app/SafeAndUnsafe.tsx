@@ -1,5 +1,6 @@
-import { StatusBar, Text, View } from 'react-native';
+import { StatusBar as RNStatusBar, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 
 function SafeScreen() {
   return (
@@ -43,7 +44,8 @@ function SafeScreenWithInsets() {
         paddingRight: insets.right,
       }}
     >
-      <StatusBar barStyle={'dark-content'} />
+      {/* <RNStatusBar barStyle={'dark-content'} /> */}
+      <ExpoStatusBar style="dark" />
       <Text>Main Screen</Text>
     </View>
   );
