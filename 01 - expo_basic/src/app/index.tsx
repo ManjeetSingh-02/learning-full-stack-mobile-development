@@ -4,6 +4,7 @@ import ScrollViewScreen from './ScrollView';
 import KeyboardAvoidView from './KeyboardAvoidView';
 import SafeAndUnsafe from './SafeAndUnsafe';
 import Stylesheet from './Stylesheet';
+import ComposedStylesheet from './ComposedStylesheet';
 
 export default function () {
   return (
@@ -11,7 +12,8 @@ export default function () {
     // <ScrollViewScreen />
     // <FlatlistScreen />
     // <KeyboardAvoidView />
-    <SafeAndUnsafe />
+    // <SafeAndUnsafe />
     // <Stylesheet />
+    <ComposedStylesheet />
   );
 }
