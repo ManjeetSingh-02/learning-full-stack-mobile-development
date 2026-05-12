@@ -1,5 +1,10 @@
 import { StatusBar as RNStatusBar, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import {
+  initialWindowMetrics,
+  SafeAreaProvider,
+  SafeAreaView,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 
 function SafeScreen() {
@@ -52,8 +57,9 @@ function SafeScreenWithInsets() {
 }
 
 function SafeScreenWithProvider() {
+  console.log(initialWindowMetrics);
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <Text>Main Screen</Text>
     </SafeAreaProvider>
   );
