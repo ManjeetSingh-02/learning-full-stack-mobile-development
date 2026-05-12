@@ -7,6 +7,7 @@ import Stylesheet from './Stylesheet';
 import ComposedStylesheet from './ComposedStylesheet';
 import FlattenStylesheet from './FlattenStylesheet';
 import Dimension from './Dimension';
+import DarkMode from './DarkMode';
 
 export default function () {
   return (
@@ -18,6 +19,7 @@ export default function () {
     // <Stylesheet />
     // <ComposedStylesheet />
     // <FlattenStylesheet />
-    <Dimension />
+    // <Dimension />
+    <DarkMode />
   );
 }
