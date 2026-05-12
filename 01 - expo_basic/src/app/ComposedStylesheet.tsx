@@ -6,20 +6,20 @@ export default function () {
 
   return (
     <View style={styles.container}>
-      {/* <View style={(styles.button, isActive && styles.activeButton)}>
-        <Text style={styles.buttonText}>Button</Text>
-      </View> */}
+      <View style={[styles.button, isActive && styles.activeButton]}>
+        <Text style={styles.buttonText}>Uncomposed Button</Text>
+      </View>
 
       {/* @ts-ignore */}
       <View style={buttonStyle}>
-        <Text style={styles.buttonText}>Button</Text>
+        <Text style={styles.buttonText}>Composed Button</Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 10 },
   button: {
     paddingVertical: 12,
     paddingHorizontal: 32,
