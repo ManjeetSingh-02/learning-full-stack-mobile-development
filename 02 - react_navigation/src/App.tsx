@@ -4,6 +4,7 @@ import { StaticNativeStackNavigation } from '@/navigators/NativeStack/Static';
 import { StaticStackNavigation } from '@/navigators/Stack/Static';
 import { StaticBottomTabs } from './navigators/BottomTabs/Static';
 import { DynamicBottomTabs } from './navigators/BottomTabs/Dynamic';
+import { DynamicBottomTabsWithStack } from './navigators/BottomTabWithStack';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
 
     // BOTTOM TABS
     // <StaticBottomTabs />
-    <DynamicBottomTabs />
+    // <DynamicBottomTabs />
+    <DynamicBottomTabsWithStack />
   );
 }
