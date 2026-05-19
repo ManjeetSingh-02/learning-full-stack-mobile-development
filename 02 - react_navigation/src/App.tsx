@@ -5,6 +5,7 @@ import { StaticStackNavigation } from '@/navigators/Stack/Static';
 import { StaticBottomTabs } from './navigators/BottomTabs/Static';
 import { DynamicBottomTabs } from './navigators/BottomTabs/Dynamic';
 import { DynamicBottomTabsWithStack } from './navigators/BottomTabWithStack';
+import DynamicMaterialTopTabs from './navigators/MaterialTopTabs';
 
 export default function App() {
   return (
@@ -19,6 +20,11 @@ export default function App() {
     // BOTTOM TABS
     // <StaticBottomTabs />
     // <DynamicBottomTabs />
-    <DynamicBottomTabsWithStack />
+
+    // BOTTOM TABS WITH STACK
+    // <DynamicBottomTabsWithStack />
+
+    // MATERIAL TOP TABS
+    <DynamicMaterialTopTabs />
   );
 }
