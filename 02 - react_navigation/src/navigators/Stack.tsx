@@ -6,10 +6,10 @@ import UserScreen from '@/screens/User';
 
 // external-imports
 import { createStaticNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // stack navigator for screens
-const RootStack = createNativeStackNavigator({
+const RootStack = createStackNavigator({
   initialRouteName: 'Home',
   screens: {
     Home: HomeScreen,
