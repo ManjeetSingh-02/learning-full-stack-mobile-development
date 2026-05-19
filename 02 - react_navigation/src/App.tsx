@@ -1,5 +1,5 @@
-import { StaticStackNavigation } from '@/navigators/Stack';
-import { StaticNativeStackNavigation } from './navigators/NativeStack';
+import { StaticStackNavigation } from '@/navigators/Stack/Static';
+import { StaticNativeStackNavigation } from '@/navigators/NativeStack/Static';
 
 export default function App() {
   return (
