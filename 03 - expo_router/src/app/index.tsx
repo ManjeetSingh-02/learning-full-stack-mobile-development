@@ -49,6 +49,17 @@ export default function Index() {
           Catch ALL Products/(name)/(overview)/(types)
         </Link>
       </Button>
+
+      {/* Route Groups */}
+      {/* @ts-ignore */}
+      <Button>
+        <Link href='/login'>Route Group Login</Link>
+      </Button>
+
+      {/* @ts-ignore */}
+      <Button>
+        <Link href='/signup'>Route Group SignUp</Link>
+      </Button>
     </View>
   );
 }
