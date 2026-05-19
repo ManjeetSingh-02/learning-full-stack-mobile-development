@@ -6,6 +6,7 @@ import { StaticBottomTabs } from './navigators/BottomTabs/Static';
 import { DynamicBottomTabs } from './navigators/BottomTabs/Dynamic';
 import { DynamicBottomTabsWithStack } from './navigators/BottomTabWithStack';
 import DynamicMaterialTopTabs from './navigators/MaterialTopTabs';
+import DynamicDrawer from './navigators/Drawer';
 
 export default function App() {
   return (
@@ -17,14 +18,17 @@ export default function App() {
     // <DynamicStackNavigation />
     // <DynamicNativeStackNavigation />
 
-    // BOTTOM TABS
+    // BOTTOM TABS NAVIGATION OPTIONS
     // <StaticBottomTabs />
     // <DynamicBottomTabs />
 
-    // BOTTOM TABS WITH STACK
+    // BOTTOM TABS WITH STACK NAVIGATION OPTIONS
     // <DynamicBottomTabsWithStack />
 
-    // MATERIAL TOP TABS
-    <DynamicMaterialTopTabs />
+    // MATERIAL TOP TABS NAVIGATION OPTIONS
+    // <DynamicMaterialTopTabs />
+
+    // DRAWER NAVIGATION OPTIONS
+    <DynamicDrawer />
   );
 }
