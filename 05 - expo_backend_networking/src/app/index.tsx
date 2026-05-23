@@ -120,7 +120,9 @@ export default function Index() {
     try {
       setIsLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:3000/api/v1/hello-world');
+      const response = await fetch(
+        `http://${process.env.EXPO_PUBLIC_LOCALHOST_IP}:3000/api/v1/hello-world`
+      );
       const json = await response.json();
       setData(json);
     } catch (error) {
