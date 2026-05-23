@@ -12,8 +12,19 @@ export default function Index() {
     }
   }
 
+  async function fetchUsers() {
+    try {
+      const response = await fetch('/api/users');
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
     fetchDataFromExternalAPI();
+    fetchUsers();
   }, []);
 
   return (
