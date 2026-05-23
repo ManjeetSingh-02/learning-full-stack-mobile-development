@@ -116,6 +116,21 @@ export default function Index() {
     }
   }
 
+  async function fetchDataFromExternalLocalhostAPI() {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const response = await fetch('http://localhost:3000/api/v1/hello-world');
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      setError('Could not load data from the external localhost API.');
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <View style={styles.screen}>
       <View style={styles.glowTop} />
@@ -140,6 +155,11 @@ export default function Index() {
             label="Get All Users From Backend API"
             onPress={fetchUsers}
             variant="info"
+          />
+          <ActionButton
+            label="Get Data From External Localhost API"
+            onPress={fetchDataFromExternalLocalhostAPI}
+            variant="local"
           />
           <ActionButton
             label="Create New User From Backend API"
@@ -185,7 +205,7 @@ export default function Index() {
 type ActionButtonProps = {
   label: string;
   onPress: () => void;
-  variant: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger';
+  variant: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger' | 'local';
 };
 
 function ActionButton({ label, onPress, variant }: ActionButtonProps) {
@@ -200,13 +220,17 @@ function ActionButton({ label, onPress, variant }: ActionButtonProps) {
         variant === 'success' && styles.successButton,
         variant === 'warning' && styles.warningButton,
         variant === 'danger' && styles.dangerButton,
+        variant === 'local' && styles.localButton,
         pressed && styles.buttonPressed,
       ]}
     >
       <Text
         style={[
           styles.buttonText,
-          (variant === 'secondary' || variant === 'info' || variant === 'warning') &&
+          (variant === 'secondary' ||
+            variant === 'info' ||
+            variant === 'warning' ||
+            variant === 'local') &&
             styles.darkButtonText,
         ]}
       >
@@ -301,6 +325,9 @@ const styles = StyleSheet.create({
   },
   dangerButton: {
     backgroundColor: '#DC2626',
+  },
+  localButton: {
+    backgroundColor: '#14B8A6',
   },
   buttonPressed: {
     transform: [{ scale: 0.98 }],
