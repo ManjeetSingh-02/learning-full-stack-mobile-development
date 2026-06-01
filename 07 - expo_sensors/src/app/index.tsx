@@ -1,12 +1,14 @@
 import { View, StyleSheet } from 'react-native';
 import AccelerometerDisplay from '../components/Accelerometer';
 import GyroscopeDisplay from '../components/Gyroscope';
+import LightSensorDisplay from '../components/LightSensor';
 
 export default function Index() {
   return (
     <View style={styles.container}>
       {/* <AccelerometerDisplay /> */}
-      <GyroscopeDisplay />
+      {/* <GyroscopeDisplay /> */}
+      <LightSensorDisplay />
     </View>
   );
 }
