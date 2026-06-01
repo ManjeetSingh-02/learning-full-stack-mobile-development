@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "expo_sensors",
+    "slug": "expo_sensors",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "exposensors",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
