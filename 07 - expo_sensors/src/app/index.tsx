@@ -3,6 +3,7 @@ import AccelerometerDisplay from '../components/Accelerometer';
 import GyroscopeDisplay from '../components/Gyroscope';
 import LightSensorDisplay from '../components/LightSensor';
 import MagnetometerDisplay from '../components/Magnetometer';
+import DeviceMotionScreen from '../components/DeviceMotion';
 
 export default function Index() {
   return (
@@ -10,7 +11,8 @@ export default function Index() {
       {/* <AccelerometerDisplay /> */}
       {/* <GyroscopeDisplay /> */}
       {/* <LightSensorDisplay /> */}
-      <MagnetometerDisplay />
+      {/* <MagnetometerDisplay /> */}
+      <DeviceMotionScreen />
     </View>
   );
 }
