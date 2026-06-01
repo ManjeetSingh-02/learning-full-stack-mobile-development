@@ -2,13 +2,15 @@ import { View, StyleSheet } from 'react-native';
 import AccelerometerDisplay from '../components/Accelerometer';
 import GyroscopeDisplay from '../components/Gyroscope';
 import LightSensorDisplay from '../components/LightSensor';
+import MagnetometerDisplay from '../components/Magnetometer';
 
 export default function Index() {
   return (
     <View style={styles.container}>
       {/* <AccelerometerDisplay /> */}
       {/* <GyroscopeDisplay /> */}
-      <LightSensorDisplay />
+      {/* <LightSensorDisplay /> */}
+      <MagnetometerDisplay />
     </View>
   );
 }
