@@ -22,3 +22,9 @@ pnpm dlx eas-cli@latest build --profile production --platform android/ios
 ```
 pnpm dlx eas-cli@latest build:list
 ```
+
+## To install and configure EAS Update
+```
+pnpm expo add eas-updates
+pnpm dlx eas-cli@latest update:configure
+```
