@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "eas",
+    "slug": "eas",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "eas",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
