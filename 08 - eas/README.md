@@ -28,3 +28,10 @@ pnpm dlx eas-cli@latest build:list
 pnpm expo add eas-updates
 pnpm dlx eas-cli@latest update:configure
 ```
+
+## To publish an update
+```
+pnpm dlx eas-cli@latest update --channel development --message "Development update"
+pnpm dlx eas-cli@latest update --channel preview --message "Preview update"
+pnpm dlx eas-cli@latest update --channel production --message "Production update"
+```
