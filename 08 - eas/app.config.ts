@@ -29,6 +29,9 @@ export default {
       predictiveBackGestureEnabled: false,
       package: getUniqueIdentifier(),
     },
+    ios: {
+      bundleIdentifier: getUniqueIdentifier(),
+    },
     plugins: ['expo-router'],
     experiments: {
       typedRoutes: true,
