@@ -1,17 +1,12 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+import { Button, View } from 'react-native';
 
 export default function Index() {
+  const router = useRouter();
+
   return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Button title="Camera Photo" onPress={() => router.push('/camera_photo')} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
