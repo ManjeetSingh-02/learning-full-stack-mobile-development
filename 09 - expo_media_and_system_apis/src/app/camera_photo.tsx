@@ -1,4 +1,4 @@
-import { CameraView, useCameraPermissions } from 'expo-camera';
+import { CameraView, useCameraPermissions, type FlashMode } from 'expo-camera';
 import { useRef, useState } from 'react';
 import { Button, Image, Text, View } from 'react-native';
 
@@ -8,6 +8,8 @@ export default function CameraPhoto() {
   const [position, setPosition] = useState<'front' | 'back'>('back');
   const [permission, requestPermission] = useCameraPermissions();
   const [photoURI, setPhotoURI] = useState<string | null>(null);
+  const [flash, setFlash] = useState<FlashMode>('off');
+  const [torch, setTorch] = useState(false);
 
   async function takePhoto() {
     const photo = await cameraRef.current?.takePictureAsync();
@@ -38,25 +40,48 @@ export default function CameraPhoto() {
             style={{ flex: 1 }}
             facing={position}
             onCameraReady={() => setIsReady(true)}
+            flash={flash}
+            enableTorch={torch}
           />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              padding: 10,
-            }}
-          >
-            <Button
-              title="Switch"
-              onPress={() => setPosition(position === 'back' ? 'front' : 'back')}
-              disabled={!isReady}
-            />
-            <Button title="Click" onPress={takePhoto} disabled={!isReady} />
-            <Button
-              title="Clear"
-              onPress={() => setPhotoURI(null)}
-              disabled={!isReady || !photoURI}
-            />
+          <View style={{ padding: 10, gap: 10 }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <Button
+                title="Switch"
+                onPress={() => setPosition(position === 'back' ? 'front' : 'back')}
+                disabled={!isReady}
+              />
+              <Button
+                title={`Flash: ${flash}`}
+                onPress={() => setFlash(f => (f === 'off' ? 'on' : f === 'on' ? 'auto' : 'off'))}
+                disabled={!isReady}
+              />
+              <Button
+                title={`Torch: ${torch ? 'On' : 'Off'}`}
+                onPress={() => setTorch(prev => !prev)}
+                disabled={!isReady}
+              />
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 20,
+              }}
+            >
+              <Button title="Click" onPress={takePhoto} disabled={!isReady} />
+              <Button
+                title="Clear"
+                onPress={() => setPhotoURI(null)}
+                disabled={!isReady || !photoURI}
+              />
+            </View>
           </View>
           {photoURI && (
             <Image
