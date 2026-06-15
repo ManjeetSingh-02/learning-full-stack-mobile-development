@@ -7,6 +7,7 @@ export default function CameraPhoto() {
   const [isReady, setIsReady] = useState(false);
   const [position, setPosition] = useState<'front' | 'back'>('back');
   const [permission, requestPermission] = useCameraPermissions();
+  const [zoom, setZoom] = useState(0);
   const [photoURI, setPhotoURI] = useState<string | null>(null);
   const [flash, setFlash] = useState<FlashMode>('off');
   const [torch, setTorch] = useState(false);
@@ -39,6 +40,8 @@ export default function CameraPhoto() {
             ref={cameraRef}
             style={{ flex: 1 }}
             facing={position}
+            zoom={zoom}
+            mirror={position === 'front'}
             onCameraReady={() => setIsReady(true)}
             flash={flash}
             enableTorch={torch}
@@ -52,13 +55,13 @@ export default function CameraPhoto() {
               }}
             >
               <Button
-                title="Switch"
-                onPress={() => setPosition(position === 'back' ? 'front' : 'back')}
+                title={`Flash: ${flash}`}
+                onPress={() => setFlash(f => (f === 'off' ? 'on' : f === 'on' ? 'auto' : 'off'))}
                 disabled={!isReady}
               />
               <Button
-                title={`Flash: ${flash}`}
-                onPress={() => setFlash(f => (f === 'off' ? 'on' : f === 'on' ? 'auto' : 'off'))}
+                title="Flip"
+                onPress={() => setPosition(position === 'back' ? 'front' : 'back')}
                 disabled={!isReady}
               />
               <Button
@@ -80,6 +83,25 @@ export default function CameraPhoto() {
                 title="Clear"
                 onPress={() => setPhotoURI(null)}
                 disabled={!isReady || !photoURI}
+              />
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <Button
+                title="Zoom -"
+                onPress={() => setZoom(prev => Math.max(0, prev - 0.1))}
+                disabled={!isReady || zoom <= 0}
+              />
+              <Text>Zoom: {Math.round(zoom * 100)}%</Text>
+              <Button
+                title="Zoom +"
+                onPress={() => setZoom(prev => Math.min(1, prev + 0.1))}
+                disabled={!isReady || zoom >= 1}
               />
             </View>
           </View>
