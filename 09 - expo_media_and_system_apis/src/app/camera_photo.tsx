@@ -1,6 +1,7 @@
 import { CameraView, useCameraPermissions, type FlashMode } from 'expo-camera';
 import { useRef, useState } from 'react';
 import { Button, Image, Text, View } from 'react-native';
+import * as MediaLibrary from 'expo-media-library';
 
 export default function CameraPhoto() {
   const cameraRef = useRef<CameraView>(null);
@@ -11,10 +12,21 @@ export default function CameraPhoto() {
   const [photoURI, setPhotoURI] = useState<string | null>(null);
   const [flash, setFlash] = useState<FlashMode>('off');
   const [torch, setTorch] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   async function takePhoto() {
     const photo = await cameraRef.current?.takePictureAsync();
     if (photo?.uri) setPhotoURI(photo.uri);
+  }
+
+  async function saveToGallery() {
+    const { granted } = await MediaLibrary.requestPermissionsAsync();
+    if (!granted) return;
+
+    setIsSaving(true);
+    await MediaLibrary.Asset.create(photoURI!);
+    setPhotoURI(null);
+    setIsSaving(false);
   }
 
   return (
@@ -78,6 +90,11 @@ export default function CameraPhoto() {
                 gap: 20,
               }}
             >
+              <Button
+                title={isSaving ? 'Saving...' : 'Save'}
+                onPress={saveToGallery}
+                disabled={!isReady || !photoURI || isSaving}
+              />
               <Button title="Click" onPress={takePhoto} disabled={!isReady} />
               <Button
                 title="Clear"
