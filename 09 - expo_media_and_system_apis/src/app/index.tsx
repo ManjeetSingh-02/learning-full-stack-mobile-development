@@ -13,6 +13,7 @@ export default function Index() {
       <Button title="Audio Recorder" onPress={() => router.push('/audio_recorder')} />
       <Button title="Network" onPress={() => router.push('/network')} />
       <Button title="Battery" onPress={() => router.push('/battery')} />
+      <Button title="Haptics" onPress={() => router.push('/haptics')} />
     </View>
   );
 }
