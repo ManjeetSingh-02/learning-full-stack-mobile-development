@@ -15,6 +15,7 @@ export default function Index() {
       <Button title="Battery" onPress={() => router.push('/battery')} />
       <Button title="Haptics" onPress={() => router.push('/haptics')} />
       <Button title="Contact" onPress={() => router.push('/contacts')} />
+      <Button title="Document Picker" onPress={() => router.push('/document_picker')} />
     </View>
   );
 }
