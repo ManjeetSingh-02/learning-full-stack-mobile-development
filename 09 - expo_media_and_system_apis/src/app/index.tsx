@@ -11,6 +11,7 @@ export default function Index() {
       <Button title="Camera Barcode" onPress={() => router.push('/camera_barcode')} />
       <Button title="Audio Player" onPress={() => router.push('/audio_player')} />
       <Button title="Audio Recorder" onPress={() => router.push('/audio_recorder')} />
+      <Button title="Network" onPress={() => router.push('/network')} />
     </View>
   );
 }
