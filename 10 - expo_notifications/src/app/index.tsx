@@ -10,6 +10,10 @@ export default function Index() {
         title='Local Notification'
         onPress={() => router.push('/local')}
       />
+      <Button
+        title='Push Notification'
+        onPress={() => router.push('/push')}
+      />
     </View>
   );
 }
