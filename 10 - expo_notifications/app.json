@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "expo_notifications",
+    "slug": "expo_notifications",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "exponotifications",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "predictiveBackGestureEnabled": false,
+      "package": "com.manjeetsingh02.expo_notifications.dev"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
