@@ -8,7 +8,8 @@
     "userInterfaceStyle": "automatic",
     "android": {
       "predictiveBackGestureEnabled": false,
-      "package": "com.manjeetsingh02.expo_notifications.dev"
+      "package": "com.manjeetsingh02.expo_notifications.dev",
+      "googleServicesFile": "./google-services.json"
     },
     "plugins": [
       "expo-router",
