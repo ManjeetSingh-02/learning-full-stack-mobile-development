@@ -30,6 +30,36 @@ export default function Index() {
     });
   }
 
+  async function localNotificationRepeat() {
+    const { status } = await Notifications.requestPermissionsAsync();
+    if (status !== 'granted') return;
+
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        data: { screen: '/profile/repeat', userID: 123 },
+        sound: 'default',
+        body: 'This is local notification every 5 seconds',
+        priority: Notifications.AndroidNotificationPriority.HIGH,
+        title: 'Local Notification Repeat',
+        subtitle: 'This is subtitle repeat',
+        sticky: true,
+      },
+      trigger: {
+        seconds: 5,
+        type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+        repeats: true,
+      },
+    });
+  }
+
+  async function cancelAllScheduledNotifications() {
+    await Notifications.cancelAllScheduledNotificationsAsync();
+  }
+
+  async function dismissAllNotifications() {
+    await Notifications.dismissAllNotificationsAsync();
+  }
+
   useEffect(() => {
     Notifications.addNotificationResponseReceivedListener(response =>
       console.log(response.notification.request.content.data)
@@ -42,6 +72,18 @@ export default function Index() {
         title='Press to send a local notification'
         onPress={localNotification}
       />
+      <Button
+        title='Press to send a local notification every 5s'
+        onPress={localNotificationRepeat}
+      />
+      <Button
+        title='Press to cancel all notifications'
+        onPress={cancelAllScheduledNotifications}
+      />
+      <Button
+        title='Press to dismiss all notifications'
+        onPress={dismissAllNotifications}
+      />
     </View>
   );
 }
@@ -51,5 +93,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 10,
   },
 });
