@@ -42,4 +42,5 @@ example
 /ios
 /android
 
+# add this after running the eas build to avoid the not found error for the file
 google-services.json
