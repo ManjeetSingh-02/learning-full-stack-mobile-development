@@ -10,7 +10,18 @@
       "predictiveBackGestureEnabled": false,
       "package": "com.manjeetsingh02.expo_notifications.dev"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#3299a8",
+          "defaultChannel": "default",
+          "sounds": ["./assets/sound.wav"]
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
