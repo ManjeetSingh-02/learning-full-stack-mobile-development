@@ -41,6 +41,9 @@ importers:
       expo-router:
         specifier: ~56.2.11
         version: 56.2.11(be4e47ad1b3f91f8ed8c525970598deb)
+      expo-secure-store:
+        specifier: ~56.0.4
+        version: 56.0.4(expo@56.0.12)
       expo-splash-screen:
         specifier: ~56.0.10
         version: 56.0.10(expo@56.0.12)(typescript@6.0.3)
@@ -56,6 +59,9 @@ importers:
       expo-web-browser:
         specifier: ~56.0.5
         version: 56.0.5(expo@56.0.12)(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))
+      jose:
+        specifier: ^6.2.3
+        version: 6.2.3
       react:
         specifier: 19.2.3
         version: 19.2.3
@@ -1582,6 +1588,11 @@ packages:
       react-server-dom-webpack:
         optional: true
 
+  expo-secure-store@56.0.4:
+    resolution: {integrity: sha512-hjEi/gmpdFFJ9lYbdp3k3p/WchV7Gi0Qt8jt/m/0WJadqQrskafHAlDxbZkII1cN3Yd7zp9Lvkeq3UfGhSwirQ==}
+    peerDependencies:
+      expo: '*'
+
   expo-server@56.0.5:
     resolution: {integrity: sha512-SmM2p2g3Jrktpiazcst+OxhjSzOHXKAY4BPURHYHXvApzzoybMmrNF4IEZ8DKZ145BhSe4ydAmlEFCRTsdtgUQ==}
     engines: {node: '>=20.16.0'}
@@ -1837,6 +1848,9 @@ packages:
 
   jimp-compact@0.16.1:
     resolution: {integrity: sha512-dZ6Ra7u1G8c4Letq/B5EzAxj4tLFHL+cGtdpR+PVm4yzPDj+lCk+AbivWt1eOM+ikzkowtyV7qSqX6qr3t71Ww==}
+
+  jose@6.2.3:
+    resolution: {integrity: sha512-YYVDInQKFJfR/xa3ojUTl8c2KoTwiL1R5Wg9YCydwH0x0B9grbzlg5HC7mMjCtUJjbQ/YnGEZIhI5tCgfTb4Hw==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -4688,6 +4702,10 @@ snapshots:
       - react-native-worklets
       - supports-color
 
+  expo-secure-store@56.0.4(expo@56.0.12):
+    dependencies:
+      expo: 56.0.12(@babel/core@7.29.7)(@expo/dom-webview@56.0.5)(@expo/metro-runtime@56.0.15)(expo-router@56.2.11)(react-dom@19.2.3(react@19.2.3))(react-native-web@0.21.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-native-worklets@0.8.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3)(typescript@6.0.3)
+
   expo-server@56.0.5: {}
 
   expo-splash-screen@56.0.10(expo@56.0.12)(typescript@6.0.3):
@@ -4956,6 +4974,8 @@ snapshots:
       supports-color: 8.1.1
 
   jimp-compact@0.16.1: {}
+
+  jose@6.2.3: {}
 
   js-tokens@4.0.0: {}
 
