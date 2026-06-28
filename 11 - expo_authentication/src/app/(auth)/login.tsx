@@ -1,11 +1,13 @@
+import { BetterAuthPanel } from '@/components/better-auth-panel';
 import { useAuth } from '@/context/auth.context';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button, Text } from 'react-native';
 
 export default function Login() {
   const { signIn } = useAuth();
 
   return (
     <View style={styles.container}>
+      <Text>For Expo-Auth-Session</Text>
       <Button
         title='Login with Google'
         onPress={() => signIn('google')}
@@ -14,6 +16,8 @@ export default function Login() {
         title='Login with GitHub'
         onPress={() => signIn('github')}
       />
+      <Text>For Better-Auth</Text>
+      <BetterAuthPanel />
     </View>
   );
 }
