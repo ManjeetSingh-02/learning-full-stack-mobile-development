@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "expo-clerk",
+    "slug": "expo-clerk",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "expoclerk",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": ["expo-router", "@clerk/expo", "expo-secure-store"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
